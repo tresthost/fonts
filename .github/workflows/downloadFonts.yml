@@ -30,10 +30,12 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GH_PAT }}
         run: |
-          git config --local user.name "${{ secrets.COMMIT_USERNAME }}"
-          git config --local user.email "${{ secrets.COMMIT_EMAIL }}"
+          if [[ "$(git status --porcelain)" != "" ]]; then
+          git config user.name ${{ secrets.COMMIT_USERNAME }}
+          git config user.email ${{ secrets.COMMIT_EMAIL }}
           git add .
           git commit -m "[➡️] font update"
+          fi
         
       - name: Push Changes
         run: git push
