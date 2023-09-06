@@ -28,7 +28,7 @@ jobs:
 
       - name: Commit Changes
         env:
-          GITHUB_TOKEN: ${{ secrets.GH_PAT }}
+          GITHUB_TOKEN: ${{ secrets.PAT_TOKEN }}
         run: |
           if [[ "$(git status --porcelain)" != "" ]]; then
           git config user.name ${{ secrets.COMMIT_USERNAME }}
