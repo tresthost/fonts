@@ -2,8 +2,7 @@ name: Font Update
 
 on:
   schedule:
-    #- cron: '*/5 * * * *'  # Schedule to run every 5 minutes
-    - cron: "0 0 1 * *"
+    - cron: '*/1 * * * *' # every minute
 
 jobs:
   build:
