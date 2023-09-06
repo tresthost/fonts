@@ -11,7 +11,7 @@
 ---
 
 > [!NOTE]
-> If you wan't to add a font, please make a pull request with the updated ./system/fonts.json file and wait for it to be accepted by the maintainers.
+> If you wan't to add a font, please make a pull request with the updated ``./system/fonts.json`` file and wait for it to be accepted by the maintainers.
 
 ## ✅ Available Font Families (at the moment)
 * [Roboto](https://fonts.google.com/specimen/Roboto)
