@@ -8,7 +8,7 @@ on:
       - master
 
 jobs:
-  build:
+  push:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -23,8 +23,8 @@ jobs:
           git config --local user.email ${{ secrets.COMMIT_EMAIL }}
           git config --local user.name ${{ secrets.COMMIT_USERNAME }}
           git add .
-          git commit -m "[➡️] Update fonts - $(date +%Y-%m-%d)"
+          git commit -m "[➡️] Update fonts"
       - name: Push changes
         run: git push
         env:
-          GITHUB_TOKEN: ${{ secrets.GIT_TOKEN }}
+          GIT_TOKEN: ${{ secrets.GIT_TOKEN }}
