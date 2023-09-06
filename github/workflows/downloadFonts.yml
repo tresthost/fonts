@@ -1,0 +1,27 @@
+name: Download Fonts
+
+on:
+  schedule:
+    - cron: '*/5 * * * *'  # Run every 5 minutes
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install pnpm
+        run: npm install -g pnpm
+      - name: Install dependencies
+        run: pnpm install
+      - name: Download fonts
+        run: pnpm run download
+      - name: Commit changes
+        run: |
+          git config --local user.email ${{ secrets.COMMIT_EMAIL }}
+          git config --local user.name ${{ secrets.COMMIT_USERNAME }}
+          git add .
+          git commit -m "[➡️] Update fonts - $(date +%Y-%m-%d)"
+      - name: Push changes
+        run: git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GIT_TOKEN }}
