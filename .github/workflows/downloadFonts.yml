@@ -26,10 +26,9 @@ jobs:
       - name: Download Fonts
         run: pnpm run download
 
-        env:
-          GITHUB_TOKEN: ${{ secrets.GIT_TOKEN }}
-
       - name: Commit Changes
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_PAT }}
         run: |
           git config --local user.name "${{ secrets.COMMIT_USERNAME }}"
           git config --local user.email "${{ secrets.COMMIT_EMAIL }}"
