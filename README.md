@@ -14,7 +14,7 @@
 > If you wan't to add a font, please make a pull request with the updated ``./system/fonts.json`` file and wait for it to be accepted by the maintainers.
 
 ## ✅ Available Font Families (at the moment)
-* [Roboto](https://fonts.google.com/specimen/Roboto)
+* [Roboto](https://fonts.google.com/specimen/Roboto) (default)
 * [Open Sans](https://fonts.google.com/specimen/Open+Sans)
 * [Lato](https://fonts.google.com/specimen/Lato)
 * [Montserrat](https://fonts.google.com/specimen/Montserrat)
