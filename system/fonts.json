@@ -2,6 +2,15 @@
     "fonts": [
         {
             "family": "Roboto"
+        },
+        {
+            "family": "Open Sans"
+        },
+        {
+            "family": "Lato"
+        },
+        {
+            "family": "Montserrat"
         }
     ]
 }
