@@ -1,6 +1,6 @@
 {
   "name": "fonts",
-  "version": "1.21.3",
+  "version": "1.21.4",
   "description": "this repository is the import location for our server structures to import and load the fonts from",
   "main": "/system/index.js",
   "scripts": {
