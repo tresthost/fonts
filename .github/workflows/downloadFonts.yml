@@ -28,10 +28,10 @@ jobs:
 
       - name: Download Fonts
         run: pnpm run download
-
-      - name: Commit Changes
         env:
           GITHUB_TOKEN: ${{ secrets.PAT_TOKEN }}
+
+      - name: Commit Changes
         run: |
           if [[ "$(git status --porcelain)" != "" ]]; then
           git config user.name TrestHostBot
