@@ -9,8 +9,10 @@ jobs:
   build:
     runs-on: ubuntu-latest
     strategy:
+      fail-fast: false
       matrix:
-        node: [20.x]
+        language: ["javascript"]
+        node: ["18.x"]
     steps:
       - name: 🧱 Checkout repository
         uses: actions/checkout@v4

@@ -10,7 +10,7 @@ jobs:
       fail-fast: false
       matrix:
         language: ["javascript"]
-        node: ["20.x"]
+        node: ["18.x"]
     steps:
       - name: 🧱 Checkout repository
         uses: actions/checkout@v4
