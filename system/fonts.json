@@ -1,19 +1,19 @@
 {
-    "fonts": [
-        {
-            "family": "Roboto"
-        },
-        {
-            "family": "Inter"
-        },
-        {
-            "family": "Open Sans"
-        },
-        {
-            "family": "Lato"
-        },
-        {
-            "family": "Montserrat"
-        }
-    ]
+  "fonts": [
+    {
+      "family": "Roboto"
+    },
+    {
+      "family": "Inter"
+    },
+    {
+      "family": "Open Sans"
+    },
+    {
+      "family": "Lato"
+    },
+    {
+      "family": "Montserrat"
+    }
+  ]
 }

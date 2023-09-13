@@ -1,57 +1,41 @@
 name: Font Update
 
 on:
+  workflow_dispatch:
   schedule:
-    - cron: '*/15 * * * *' # every 15 minutes
+    - cron: "*/15 * * * *" # every 15 minutes
 
 jobs:
   build:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: [20.x]
-
+        node: [20.x]
     steps:
-      - name: Checkout Repository
+      - name: 🧱 Checkout repository
         uses: actions/checkout@v4
-
-      - name: Setup Node.js
+      - name: 🔩 Setup PNPM
+        uses: pnpm/action-setup@v2
+        with:
+          version: latest
+      - name: 🔩 Setup Node ${{ matrix.node }}
         uses: actions/setup-node@v3
         with:
-          node-version: 20
-
-      - name: Install pnpm
-        run: npm install -g pnpm
-
-      - name: Install Dependencies with pnpm
+          node-version: ${{ matrix.node }}
+          cache: "pnpm"
+      - name: 🚀 Install dependencies
         run: pnpm install
-
-      - name: Delete .ttf Files
-        run: |
-          find fonts -name '*.ttf' -type f -exec rm {} \;
-        working-directory: ${{ github.workspace }}
-
-      - name: Commit Changes (1/2)
-        run: |
-          if [[ "$(git status --porcelain)" != "" ]]; then
-            git config user.name TrestHostBot
-            git config user.email admin@tresthost.me
-            git add .
-            git commit -m "[➡️] Font Update (1/2)"
-            git push -f
-          fi
-
-      - name: Download Fonts
+      - name: 📥 Download Fonts
         run: pnpm run download
         env:
           GITHUB_TOKEN: ${{ secrets.PAT_TOKEN }}
 
-      - name: Commit Changes (2/2)
+      - name: ☑️ Commit Changes
         run: |
           if [[ "$(git status --porcelain)" != "" ]]; then
             git config user.name TrestHostBot
             git config user.email admin@tresthost.me
             git add .
-            git commit -m "[➡️] Font Update (2/2)"
+            git commit -m "[➡️] Font Update"
             git push -f
           fi
