@@ -1,4 +1,4 @@
-<img width="135" height="135" align="left" style="float: left; margin: 0 10px 0 0; border-radius: 50%;" src="https://cdn.discordapp.com/attachments/971049189377179718/1156077198688653352/image_1.png">
+<img width="135" height="135" align="left" style="float: left; margin: 0 10px 0 0; border-radius: 50%;" src="https://github.com/tresthost/cdn/blob/main/assets/logo_rounded.png">
 
 ## TrestHost Fonts
 
