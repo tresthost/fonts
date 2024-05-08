@@ -28,7 +28,9 @@ jobs:
         env:
           COREPACK_ENABLE_STRICT: 0
       - name: 🚀 Install dependencies
-        run: pnpm install
+        run: pnpm install        
+        env:
+          COREPACK_ENABLE_STRICT: 0
       - name: 📥 Download Fonts
         run: pnpm run download
         env:
