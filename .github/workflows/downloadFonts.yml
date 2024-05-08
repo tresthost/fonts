@@ -34,6 +34,7 @@ jobs:
       - name: 📥 Download Fonts
         run: pnpm run download
         env:
+          COREPACK_ENABLE_STRICT: 0
           GITHUB_TOKEN: ${{ secrets.PAT_TOKEN }}
 
       - name: ☑️ Commit Changes
