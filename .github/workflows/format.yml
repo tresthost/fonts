@@ -29,6 +29,10 @@ jobs:
         run: pnpm install
         env:
           COREPACK_ENABLE_STRICT: 0
+      - name: 📦 Format project
+        run: pnpm format
+        env:
+          COREPACK_ENABLE_STRICT: 0
       - name: 🚀 Check formatting
         run: "pnpm run format:check"
         env:
